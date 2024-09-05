@@ -26,7 +26,9 @@ class User {
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
 app.post("/register", async (req, res) => {
     const { email, phoneNumber, password, code } = req.body
 
